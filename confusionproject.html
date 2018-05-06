@@ -220,7 +220,7 @@
               <br>With one important difference. Instead of slowly improving, confusion matrix driven training seemed to “destabilise” the neural network and a sudden shift would occur where the classification became messed up.
               <br/>Here is an example validation set confusion matrix sequence where the network is having trouble with two shapes
                 <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cprob.PNG"/>
-              <br/>and the confusion matrix again after the network suddenly shifts.
+              <br/>and the confusion matrix again after the network suddenly shifts. This shift occurs after training the network for a few epochs on mainly the one or two shapes it was having trouble with.
                 <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cshift.PNG"/>
               <br/>But it only takes a few more epochs of training before the confusion matrix returns to the desired pattern, only this time the problem it had with the shape is resolved and the technique successfully trains on all classifications. Here is a typical final test set confusion matrix. Success !
                 <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cresult.PNG"/>
