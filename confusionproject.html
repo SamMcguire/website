@@ -198,14 +198,14 @@
             <h5> Standard Training Results </h5>
             <p class="lead">
               Here is what the validation set confusion matrix typically starts out like. The neural Network gives all the shapes the same classification.
-              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstart.png"/>
+              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstart.PNG"/>
               Early in the training the neural network classifies a few shapes really well, most shapes not so well and a couple of shapes really poorly. The validation set confusion matrix starts looking something like this:
-              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstandearly.png"/>
+              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstandearly.PNG"/>
               As training progresses, the neural network got better but starts having problems with specific shapes. These problems just get worse and worse as the training continues until no further progress is made.
               Here is an example test set confusion matrix after training where the classifier is misclassifying Backward leaning ovals as Backward leaning rectangles.
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c9as5.png"/>
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c9as5.PNG"/>
               Here is another example test set confusion matrix after training. This time the classifier is misclassifying Forward leaning rectangles as Forward leaning ovals.
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c4as8.png"/>
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c4as8.PNG"/>
             </p>
           </div>
           <div class="col-lg-2 mr-auto"></div>
@@ -219,11 +219,11 @@
               <br/>An unexpected result, however was that the neural network in both techniques ended up having problems with one or two shapes later in the training.
               <br>So instead of slowly improving, repeated training on mostly the shape the network was having trouble with seemed to “destabilise” the neural network and a sudden shift would occur where the classification became messed up.
               Here is a validation set confusion matrix sequence where the network is having trouble with two shapes
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cprob.png"/>
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cprob.PNG"/>
               and then suddenly shifts.
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cshift.png"/>
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cshift.PNG"/>
               But it only takes a few more epochs of training before the confusion matrix returns to the desired pattern, only this time the problem it had with the shape is resolved and the technique successfully trains on all classifications. Here is a typical final test set confusion matrix:
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cresult.png"/>
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cresult.PNG"/>
             </p>
           </div>
         </div>
