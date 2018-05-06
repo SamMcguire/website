@@ -214,15 +214,17 @@
             <p class="lead">
 
 
-              The validation set confusion matrix starts out looking the same for both training techniques.
-              As training progresses the neural network starts classifying all the shapes more evenly, which is what I expected and what I hoped.
-              <br/>An unexpected result, however was that the neural network in both techniques ended up having problems with one or two shapes later in the training.
-              <br>With one important difference. Instead of slowly improving, confusion matrix driven training seemed to “destabilise” the neural network and a sudden shift would occur where the classification became messed up.
-              <br/>Here is an example validation set confusion matrix sequence where the network is having trouble with two shapes
+              The validation set confusion matrix starts out looking the same. This was expected, because the training data set starts out with all classes fairly equally represented in the training set.
+              As confusion matrix driven training progresses, the neural network starts classifying all the shapes more evenly than was the case with standard training. Again what I expected and what I hoped.
+              <br/>An unexpected result, however was that confusion matrix driven training continued to have problems with one or two shapes later on, just the same as with standard training methods.
+              <br>With one important difference. Confusion matrix driven training ended up “destabilising” the neural network after a few epochs and a sudden shift typically occured.
+              <br/> So all of a sudden classification became all messed up and looked as if it was starting all over again with random weights.
+              <br/>Here is an example validation set confusion matrix where the network is having trouble with two shapes. This results in the training set being very biased, where most of the training set is composed of just one class, the one its having trouble with.
                 <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cprob.PNG"/>
-              <br/>and the confusion matrix again after the network suddenly shifts. This shift occurs after training the network for a few epochs on mainly the one or two shapes it was having trouble with.
+              <br/>Here is the "messed up" confusion matrix after the network suddenly shifts. This shift occurs after training the network for a few epochs on mainly the one or two shapes it was having trouble with.
                 <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cshift.PNG"/>
-              <br/>But it only takes a few more epochs of training before the confusion matrix returns to the desired pattern, only this time the problem it had with the shape is resolved and the technique successfully trains on all classifications. Here is a typical final test set confusion matrix. Success !
+              <br/>A very positive upshot is that the network hasn't actually been that messed up and hasn't really started over again.  It actually only takes a few more epochs of training before the confusion matrix settles down and returns to the desired pattern.
+              <br/>Only this time the problem it had with the shape is resolved and the technique successfully trains on all classifications. Here is a typical final test set confusion matrix. Success !
                 <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cresult.PNG"/>
             </p>
           </div>
@@ -240,7 +242,7 @@
             <p class="lead">
               Neural networks start out with random weights. Depending on how training progresses, the neural network can “settle in” to an ineffective classification where the network has problems with one or two classes that seems to persist for the rest of the training.
               <br/>Biasing the training set to have more examples of the classes it has trouble with early on in the training seems to “unsettle” the neural network progress.
-              <br/>It is as if the network suddenly has a paradigm shift. This shift results in a better overall classification.
+              <br/>It is as if the network suddenly has a paradigm shift. This destabilising shift is only a temporary setback, however, and just a few more epochs results in a better classification on final training.
               <br/>I found this project took up a lot of my spare time and there were a lot of problems and difficulties along the way. But there is a lot of good training videos on youtube and you don’t have to be a math expert or programming expert to follow along.
               Mostly I was copying and pasting examples without really understanding most of it. I also had to get a lot of help along the way.
             </p>
