@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sam McGuire</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Sam McGuire</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#intro">Intro</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#data">Data</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#model">Model</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#method">Method</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#results">Results</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#discuss">Discussion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/sam.jpg" alt="">
+        <h1 class="text-uppercase mb-0">Sam McGuire</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Confusion Matrix Driven Training</h2>
+      </div>
+    </header>
+
+
+
+    <!-- Intro Section -->
+    <section class="bg-primary text-white mb-0" id="intro">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Introduction</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <p class="lead">
+              This paper talks about an experiment I did last year (2017) with neural networks and an idea I came up with to make it train better.
+              <br/>I was training a neural network to classify 12 different kinds of shapes, but it kept getting stuck on one or two shapes no matter how many times I started over again.
+              <br/>The idea I came up with was to bias the training data by giving it more examples of the shapes it was having trouble with, and less examples of the shapes it was getting correct.
+            </p>
+          </div>
+          <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 mr-auto">
+            <p class="lead">
+              I did this by calculating a “confusion matrix” at the end of each training epoch and used that matrix to bias my training set for the next epoch.
+              <br/>I couldn’t find where anyone else was doing this so I didn’t know what to call the technique. So I just named it “Confusion Matrix Driven Training”. If anyone knows what it is really called let me know.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- data Section -->
+    <section class="bg-primary text-white mb-0" id="data">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Data</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <p class="lead">
+              I created a shape drawing program in C# to generate my training and testing data.
+              The shapes were “one hot” classified into 12 categories.
+              <br/>I broke my data into three, a training set, a validation set and a testing set.
+              The  training set was used to train the neural network. The validation set was used to generate a confusion matrix at the end of each epoch, in order to evaluate how the training was going.
+              The test set was used to view the final results.
+            </p>
+          </div>
+        <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 mr-auto">
+            <p class="lead">
+              <ul>
+              <li> 0.	Squares</li>
+              <li> 1.	Diamonds</li>
+            <li>   2.	Vertical Rectangles</li>
+            <li>   3.	Horizontal Rectangles</li>
+            <li>   4.	Forward leaning rectangles</li>
+            <li>   5.	Backward leaning rectangles</li>
+            <li>   6.	Vertical ovals</li>
+            <li>   7.	Horizontal ovals</li>
+          <li>  8.	Forward leaning ovals</li>
+          <li>  9.	Backward leaning ovals</li>
+          <li>  10.	Triangles</li>
+          <li>  11.	Circles</li>
+            </ul>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- model Section -->
+    <section class="bg-primary text-white mb-0" id="model">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Model</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <p class="lead">
+                I created a basic convolutional neural network in Tensorflow with two pooling layers and three hidden layers.
+
+            </p>
+          </div>
+          <div class="col-lg-6 mr-auto">
+            <p class="lead">
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- method Section -->
+    <section class="bg-primary text-white mb-0" id="method">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Method</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+              <h5>Standard Training</h5>
+              <p class="lead">
+              I trained the network on 5,000 examples at a time, taken randomly from my training set.
+              After doing this 50 times I ran a validation set confusion matrix to monitor the progress.
+            </p>
+              <h5>Confusion Matrix Driven Training</h5>
+                <p class="lead">
+              Again I trained the network on 5,000 samples at a time and after doing this 50 times I ran a validation set confusion matrix.
+            Only this time I used the confusion matrix to bias the next 50 rounds towards shapes it was having trouble with.
+            </p>
+          </div>
+          <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 mr-auto">
+            <p class="lead">
+              So the number of shapes in each category that made up the training set would start out fairly even, something like this:
+              <br/>470,  515,  465,  400,  360,  450,  390,  330,  290,  490,  370,  470
+              <br/>But when it had trouble with a shape, for example class number 4 in the below example (zero indexed), the number of shapes in each category making up the training set looked like this:
+              <br/>100,   85,   120,   155,  3865,    80,   90,   110,    95,100,90,110
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- results Section -->
+    <section class="bg-primary text-white mb-0" id="results">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Results</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <h5> Standard Training Results </h5>
+            <p class="lead">
+              Here is what the validation set confusion matrix typically starts out like. The neural Network gives all the shapes the same classification.
+              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstart.png"/>
+              Early in the training the neural network classifies a few shapes really well, most shapes not so well and a couple of shapes really poorly. The validation set confusion matrix starts looking something like this:
+              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstandearly.png"/>
+              As training progresses, the neural network got better but starts having problems with specific shapes. These problems just get worse and worse as the training continues until no further progress is made.
+              Here is an example test set confusion matrix after training where the classifier is misclassifying Backward leaning ovals as Backward leaning rectangles.
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c9as5.png"/>
+              Here is another example test set confusion matrix after training. This time the classifier is misclassifying Forward leaning rectangles as Forward leaning ovals.
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c4as8.png"/>
+            </p>
+          </div>
+          <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 mr-auto">
+            <h5>Confusion Matrix Driven Training Results</h5>
+            <p class="lead">
+
+
+              The validation set confusion matrix starts out looking the same for both training techniques.
+              As training progresses the neural network starts classifying all the shapes more evenly, which is what I expected and what I hoped.
+              <br/>An unexpected result, however was that the neural network in both techniques ended up having problems with one or two shapes later in the training.
+              <br>So instead of slowly improving, repeated training on mostly the shape the network was having trouble with seemed to “destabilise” the neural network and a sudden shift would occur where the classification became messed up.
+              Here is a validation set confusion matrix sequence where the network is having trouble with two shapes
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cprob.png"/>
+              and then suddenly shifts.
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cshift.png"/>
+              But it only takes a few more epochs of training before the confusion matrix returns to the desired pattern, only this time the problem it had with the shape is resolved and the technique successfully trains on all classifications. Here is a typical final test set confusion matrix:
+                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cresult.png"/>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- discussion Section -->
+    <section class="bg-primary text-white mb-0" id="discuss">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Discussion</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <p class="lead">
+              Neural networks start out with random weights. Depending on how training progresses, the neural network can “settle in” to an ineffective classification where the network has problems with one or two classes that seems to persist for the rest of the training.
+              Biasing the training set to have more examples of the classes it has trouble with early on in the training seems to “unsettle” the neural network progress.
+              It is as if the network suddenly has a paradigm shift. This shift results in a better overall classification.
+              I found this project took up a lot of my spare time and there were a lot of problems and difficulties along the way. But there is a lot of good training videos on youtube and you don’t have to be a math expert or programming expert to follow along.
+              Mostly I was copying and pasting examples without really understanding most of it. I also had to get a lot of help along the way.
+            </p>
+          </div>
+          <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 mr-auto">
+            <p class="lead">
+              I think anyone with an interest in machine learning can experiment like I have and I think anyone can help to improve them. You don’t have to be an expert.
+              The disadvantage of not being an expert is that you might try things that an expert already knows doesn’t work.
+              The advantage of not being an expert is that you might try things that an expert already knows doesn’t work.
+              See, maybe not knowing what might and might not work is helpful in discovering new ways of doing stuff, with the added risk of just thinking you have discovered something new because you don’t know enough to know it’s been done before.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">Melbourne
+              <br>Australia</p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+    Email : sam.mcguire78@gmail.com
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Sam McGuire 2018</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
+</html>
