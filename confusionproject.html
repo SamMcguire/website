@@ -198,14 +198,14 @@
             <h5> Standard Training Results </h5>
             <p class="lead">
               Here is what the validation set confusion matrix typically starts out like. The neural Network gives all the shapes the same classification.
-              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstart.PNG"/>
+              <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstart.PNG"/>
               Early in the training the neural network classifies a few shapes really well, most shapes not so well and a couple of shapes really poorly. The validation set confusion matrix starts looking something like this:
-              <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstandearly.PNG"/>
+              <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cstandearly.PNG"/>
               As training progresses, the neural network got better but starts having problems with specific shapes. These problems just get worse and worse as the training continues until no further progress is made.
               Here is an example test set confusion matrix after training where the classifier is misclassifying Backward leaning ovals as Backward leaning rectangles.
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c9as5.PNG"/>
+                <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c9as5.PNG"/>
               Here is another example test set confusion matrix after training. This time the classifier is misclassifying Forward leaning rectangles as Forward leaning ovals.
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c4as8.PNG"/>
+                <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/c4as8.PNG"/>
             </p>
           </div>
           <div class="col-lg-2 mr-auto"></div>
@@ -218,12 +218,12 @@
               As training progresses the neural network starts classifying all the shapes more evenly, which is what I expected and what I hoped.
               <br/>An unexpected result, however was that the neural network in both techniques ended up having problems with one or two shapes later in the training.
               <br>So instead of slowly improving, repeated training on mostly the shape the network was having trouble with seemed to “destabilise” the neural network and a sudden shift would occur where the classification became messed up.
-              Here is a validation set confusion matrix sequence where the network is having trouble with two shapes
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cprob.PNG"/>
-              and then suddenly shifts.
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cshift.PNG"/>
-              But it only takes a few more epochs of training before the confusion matrix returns to the desired pattern, only this time the problem it had with the shape is resolved and the technique successfully trains on all classifications. Here is a typical final test set confusion matrix:
-                <img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cresult.PNG"/>
+              <br/>Here is a validation set confusion matrix sequence where the network is having trouble with two shapes
+                <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cprob.PNG"/>
+              <br/>and then suddenly shifts.
+                <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cshift.PNG"/>
+              <br/>But it only takes a few more epochs of training before the confusion matrix returns to the desired pattern, only this time the problem it had with the shape is resolved and the technique successfully trains on all classifications. Here is a typical final test set confusion matrix:
+                <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/confuse/cresult.PNG"/>
             </p>
           </div>
         </div>
@@ -239,9 +239,9 @@
           <div class="col-lg-5 ml-auto">
             <p class="lead">
               Neural networks start out with random weights. Depending on how training progresses, the neural network can “settle in” to an ineffective classification where the network has problems with one or two classes that seems to persist for the rest of the training.
-              Biasing the training set to have more examples of the classes it has trouble with early on in the training seems to “unsettle” the neural network progress.
-              It is as if the network suddenly has a paradigm shift. This shift results in a better overall classification.
-              I found this project took up a lot of my spare time and there were a lot of problems and difficulties along the way. But there is a lot of good training videos on youtube and you don’t have to be a math expert or programming expert to follow along.
+              <br/>Biasing the training set to have more examples of the classes it has trouble with early on in the training seems to “unsettle” the neural network progress.
+              <br/>It is as if the network suddenly has a paradigm shift. This shift results in a better overall classification.
+              <br/>I found this project took up a lot of my spare time and there were a lot of problems and difficulties along the way. But there is a lot of good training videos on youtube and you don’t have to be a math expert or programming expert to follow along.
               Mostly I was copying and pasting examples without really understanding most of it. I also had to get a lot of help along the way.
             </p>
           </div>
@@ -249,9 +249,9 @@
           <div class="col-lg-5 mr-auto">
             <p class="lead">
               I think anyone with an interest in machine learning can experiment like I have and I think anyone can help to improve them. You don’t have to be an expert.
-              The disadvantage of not being an expert is that you might try things that an expert already knows doesn’t work.
+              <br/>The disadvantage of not being an expert is that you might try things that an expert already knows doesn’t work.
               The advantage of not being an expert is that you might try things that an expert already knows doesn’t work.
-              See, maybe not knowing what might and might not work is helpful in discovering new ways of doing stuff, with the added risk of just thinking you have discovered something new because you don’t know enough to know it’s been done before.
+              <br/>See, maybe not knowing what might and might not work is helpful in discovering new ways of doing stuff, with the added risk of just thinking you have discovered something new because you don’t know enough to know it’s been done before.
             </p>
           </div>
         </div>
