@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sam McGuire</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">Home</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#intro">Intro</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#method">Method</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#results">Results</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#discuss">Discussion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/sam.jpg" alt="">
+        <h1 class="text-uppercase mb-0">Sam McGuire</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Ardiono controlled electro magnet</h2>
+        <div class="mb-0">
+        <p>
+          "I believe that anyone can memorize chemicals on the periodic table or all the machine learning algorithms, however i believe that the art in everything comes from when
+           you apply what you have learnt into a real life application. I think that to truly understand anything you have to test it and question it,
+            you cant just accept what you are given."
+        </p>
+      </div>
+      </div>
+    </header>
+
+
+
+    <!-- Intro Section -->
+    <section class="bg-primary text-white mb-0" id="intro">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Introduction</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 ml-auto">
+            <p class="lead">
+              This paper talks about a project that i worked on that uses arduino to controll an electro magnet that makes another magnet float.
+              <br/>For school we had to make something to do with electronics or robotics and i had seen lots of people make this before so i thought it would be worth a shot.
+
+          </div>
+          <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 mr-auto">
+            <p class="lead">
+              I had to make mine a tiny bit different from the people on youtubes because i had different parts to use.
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- method Section -->
+    <section class="bg-primary text-white mb-0" id="method">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Method</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 mr-auto">
+              <h5>Making the Magnet</h5>
+              <p class="lead">
+              To make the magnet i had to wrap copper wire neatly and tightly around a nail, and after every wind of
+              copper wire i would have to tape it with electrcal tape to get the most efficency that i could get. This works because having electricity flowing
+              through a wire makes a weak magnetic field. When wrapped wrapped around a nail all the wires magnetic field stacks up like a bar magnet, however this
+              is stil not very strong so you wrap it around a ferromagnetic material like a nail to make it stronger. a ferromagnetic material has lots of random magnetic domains that
+              cancel eachother out however the wire makes them align to create a strong magnetic field. The stronger the current going through the wire the more powerfull
+              the magnetic field is.
+              <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/ElectroMagnet/electromagnet.png"/>
+            </p>
+          </div>
+          <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 ml-auto">
+            <h5>Wiring to Arduino Mega</h5>
+            <p class="lead">
+            I do not remember exactly how i wired the Electromagnet, however i have scetched out a rough schematic from my memory below. I do know that i used a hall magnet effect sensor
+            to measure the distance from the nail to the magnet below by measuring the distance of the magnetic field.
+            <br/><img class="img-fluid mb-5 d-block mx-auto" src="img/ElectroMagnet/Schematic.png"/>
+            </p>
+
+            <h5>Code</h5>
+            <p class="lead">
+              I wrote the code to be as simple as possible. It measured the strength of the below magnetic field and depending on how weak or strong the magnetic field
+              is it increased or decreased the strength of the electromagnet. I also had to be careful because it would also measure the strenght of the electromagnet so i had
+              to compensate for that.
+            </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- results Section -->
+    <section class="bg-primary text-white mb-0" id="results">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Results</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+        <div class="col-lg-5 mr-auto">
+            <h5>Electromagnet Results</h5>
+            <p class="lead">
+              I managed to get the magnet to float up and down if i kept my fingers there to block it from going too far, however
+              I was not able to achieve my overall goal of making it freely float without any interference.
+            </p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- discussion Section -->
+    <section class="bg-primary text-white mb-0" id="discuss">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">Discussion</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-5 mr-auto">
+            <p class="lead">
+              The experiment was not a complete success because it did not float on its own. It did not work because i attatched it to a cardboard box which moved a lot, so
+              i could not get an accurate measurement and write the code to that because it kept changing.
+            </p>
+          </div>
+          <div class="col-lg-2 mr-auto"></div>
+          <div class="col-lg-5 ml-auto">
+            <p class="lead">
+            Science is a hugely fun and wide topic to explore. I believe that anyone can memorise chemicals on the periodic table
+            or equations in physics, however i believe that the art in science comes from when you apply what you have learnt and memorised into
+            a real life application. I think that to truly understand science you have to test it and question it, you cant just accept what you are given.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">Melbourne
+              <br>Australia</p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+    Email : sam.mcguire78@gmail.com
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Sam McGuire 2018</small>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
+</html>
